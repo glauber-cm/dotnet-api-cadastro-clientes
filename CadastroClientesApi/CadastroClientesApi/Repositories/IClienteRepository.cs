@@ -8,7 +8,7 @@ namespace CadastroClientesApi.Repositories
         Task<Cliente?> GetByIdAsync(int id);
         Task AddAsync(Cliente cliente);
         Task UpdateAsync(Cliente cliente);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(Cliente cliente);
 
     }
 }

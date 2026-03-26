@@ -21,18 +21,22 @@ namespace CadastroClientesApi.Repositories
             => await _context.Clientes.FindAsync(id);
 
 
-        public Task AddAsync(Cliente cliente)
+        public async Task AddAsync(Cliente cliente)
         {
-           
+           _context.Clientes.Add(cliente);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(Cliente cliente)
         {
+            _context.Clientes.Remove(cliente);
+            await _context.SaveChangesAsync();
         }
 
-        public Task UpdateAsync(Cliente cliente)
+        public async Task UpdateAsync(Cliente cliente)
         {
-
+            _context.Clientes.Update(cliente);
+            await _context.SaveChangesAsync();
         }
     }
 }
